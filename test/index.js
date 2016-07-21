@@ -25,9 +25,24 @@ describe('State', function () {
   });
 
 
+  it('#delete()', function() {
+    state.delete('age');
+    expect(state.value).to.be.deep.equal({name: 'John'});
+  });
+
+
   it('#clear()', function () {
     state.clear();
     expect(JSON.parse(sessionStorage.getItem('user'))).to.be.deep.equal({});
   });
+
+
+  it('#isEmpty', function() {
+    expect(state.isEmpty).to.be.equal(true);
+    state.set('name', 'John');
+    expect(state.isEmpty).to.be.equal(false);
+  });
+
+
 
 });

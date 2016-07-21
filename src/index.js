@@ -21,12 +21,23 @@ export default class State {
     return {...this._value};
   }
 
+  get isEmpty() {
+    return Object.keys(this._value).length === 0;
+  }
+
   get(key) {
     return this._value[key];
   }
 
   set(key, value) {
     this._value[key] = value;
+    this._save();
+    return this;
+  }
+
+
+  delete(key) {
+    delete this._value[key];
     this._save();
     return this;
   }
