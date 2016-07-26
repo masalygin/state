@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/masalygin/state.svg?branch=master)](https://travis-ci.org/masalygin/state)
+
+
 ```js
 import State from 'state';
 
