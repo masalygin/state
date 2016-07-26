@@ -15,16 +15,16 @@ module.exports = function (config) {
 
 
     preprocessors: {
-      'src/**/*.js': ['babel', 'commonjs'],
-      'test/**/*.js': ['babel', 'commonjs']
+      'src/**/*.js': ['babel', 'commonjs', 'coverage'],
+      'test/**/*.js': ['babel', 'commonjs', 'coverage']
     },
 
 
-    reporters: ['progress', 'coverage', 'coveralls'],
+    reporters: ['progress', 'coverage'],
 
     coverageReporter: {
       type: 'lcov',
-      dir: '.coverage/',
+      dir: 'coverage/',
       subdir: '.'
     },
 
